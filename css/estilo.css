@@ -387,8 +387,7 @@ form > button {
 
 .banner-tipos{
 	width: 100%;
-	/*height: 300px;*/
-	background-color: #601f8e;
+	/*background-color: #601f8e;*/
 	display: flex;
 	overflow: hidden;
 	align-items: center;
