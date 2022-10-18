@@ -1,3 +1,24 @@
+<?php
+session_start();
+include('./php/conexao.php');
+//print_r($_SESSION);
+
+if((!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true)){
+    unset($_SESSION['nome']);
+    unset($_SESSION['senha']);
+    header('Location: login.php');
+}
+
+$logado = $_SESSION['nome'];
+
+//$sql = "SELECT * FROM produto ORDER BY nome_produto DESC";
+$sql = "SELECT * FROM produto WHERE tipo_produto = 'baby body'";
+
+$result = $conexao->query($sql);
+//print_r($result);
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +56,7 @@
 
 			<div class="icones">
 
-				<a href="../compras/compras.html">
+				<a href="comprados.php">
 					<div class="compras">
 						<i class="fas fa-shopping-bag"></i>
 					</div>
@@ -66,8 +87,8 @@
 				</li>
 
 				<li><a href="index.html" class="link-menu"><span>Novidades</span></a></li>
-				<li><a href="feminino.html" class="link-menu"><span>Feminino</span></a></li>
-				<li><a href="masculino.html" class="link-menu"><span>Masculino</span></a></li>
+				<li><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
+				<li><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
 				<li class="marcador-pagina"><a href="" class="link-menu"><span>Infantil</span></a></li>
 				<li><a href="moletons.html" class="link-menu"><span>Moletons</span></a></li>
 				<li><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a></li>
@@ -81,125 +102,26 @@
 
 		<div class="vitrine-item">
 
-			<a href="/comprar">
-				<figure class="itens">
-					<div class="img-item">
-						<img src="./imagens/produtos/infantil/Baby Body Goku.png">
-					</div>
+		<?php
+                while($user_data = mysqli_fetch_assoc($result)){
 
-					<div class="inf-produto">
-						<h2 class="titulo-produto" id="titulo-item">Baby Body Goku</h2>			
-						<div class="area-precos">
-							<h3 class="preco">R$ 20,00</h3>
-						</div>
-					</div>
-				</figure>
-			</a>
+				echo "<a href='./pgCompra.php?id_produto=$user_data[id_produto]'>";
+					echo "<figure class='itens'>";
+						echo"<div class='img-item'>";
+							echo"<img src=".$user_data['url']."/>";
+						echo"</div>";
+	
+						echo"<div class='inf-produto'>";
+							echo"<h2 class='titulo-produto' id='titulo-item'>".$user_data['nome_produto']."</h2>";		
+							echo"<div class='area-precos'>";
+								echo"<h3 class='preco' id='preco'>R$".$user_data['preco']."</h3>";
+							echo"</div>";
+						echo"</div>";
+					echo"</figure>";
+				echo "</a>";
 
-			<a href="/comprar">
-				<figure class="itens">
-					<div class="img-item">
-						<img src="./imagens/produtos/infantil/Animações/Body Baby - Pato Donald.png">
-					</div>
-
-					<div class="inf-produto">
-						<h2 class="titulo-produto" id="titulo-item">Baby Body Pato Donald</h2>			
-						<div class="area-precos">
-							<h3 class="preco">R$ 20,00</h3>
-						</div>
-					</div>
-				</figure>
-			</a>
-
-			<a href="/comprar">
-				<figure class="itens">
-					<div class="img-item">
-						<img src="./imagens/produtos/infantil/Animações/Body Baby - Jack.png">
-					</div>
-
-					<div class="inf-produto">
-						<h2 class="titulo-produto" id="titulo-item">Baby Body - Jack</h2>			
-						<div class="area-precos">
-							<h3 class="preco">R$ 20,00</h3>
-						</div>
-					</div>
-				</figure>
-			</a>
-
-			<a href="/comprar">
-				<figure class="itens">
-					<div class="img-item">
-						<img src="./imagens/produtos/infantil/Animes/Body Baby - Naruto.png">
-					</div>
-
-					<div class="inf-produto">
-						<h2 class="titulo-produto" id="titulo-item">Baby Body - Naruto</h2>			
-						<div class="area-precos">
-							<h3 class="preco">R$ 20,00</h3>
-						</div>
-					</div>
-				</figure>
-			</a>
-
-			<a href="/comprar">
-				<figure class="itens">
-					<div class="img-item">
-						<img src="./imagens/produtos/infantil/Filmes/Body Baby - DC.png">
-					</div>
-
-					<div class="inf-produto">
-						<h2 class="titulo-produto" id="titulo-item">Baby Body Goku</h2>			
-						<div class="area-precos">
-							<h3 class="preco">R$ 20,00</h3>
-						</div>
-					</div>
-				</figure>
-			</a>
-			
-			<a href="/comprar">
-				<figure class="itens">
-					<div class="img-item">
-						<img src="./imagens/produtos/infantil/Filmes/Body Baby - Flash.png">
-					</div>
-
-					<div class="inf-produto">
-						<h2 class="titulo-produto" id="titulo-item">Boby Bady Flash</h2>			
-						<div class="area-precos">
-							<h3 class="preco">R$ 20,00</h3>
-						</div>
-					</div>
-				</figure>
-			</a>
-
-			<a href="/comprar">
-				<figure class="itens">
-					<div class="img-item">
-						<img src="./imagens/produtos/infantil/Filmes/Body Baby - Mulher - Maravilha.png">
-					</div>
-
-					<div class="inf-produto">
-						<h2 class="titulo-produto" id="titulo-item">Boby Bady Mulher Maravilha</h2>			
-						<div class="area-precos">
-							<h3 class="preco">R$ 20,00</h3>
-						</div>
-					</div>
-				</figure>
-			</a>
-
-			<a href="/comprar">
-				<figure class="itens">
-					<div class="img-item">
-						<img src="./imagens/produtos/infantil/Séries/Body Baby - Bat Girl.png">
-					</div>
-
-					<div class="inf-produto">
-						<h2 class="titulo-produto" id="titulo-item">Baby Body Bat Girl</h2>			
-						<div class="area-precos">
-							<h3 class="preco">R$ 20,00</h3>
-						</div>
-					</div>
-				</figure>
-			</a>
+                }
+            ?>
 
 	</section>
 
@@ -262,7 +184,7 @@
 
 	<script src="https://unpkg.com/scrollreveal"></script>
 
-	<script type="text/javascript" src="../js/infantil.js"></script>
+	<script type="text/javascript" src="./js/infantil.js"></script>
 	
 	<script>
 		ScrollReveal().reveal('.itens, footer', { interval: 16, reset: true });

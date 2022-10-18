@@ -3,6 +3,12 @@
 session_start();
 include("conexao.php");
 
+if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)){
+	unset($_SESSION['email']);
+	unset($_SESSION['senha']);
+	header("Location: ../login.html");
+}
+
 $sql = "SELECT id_cliente FROM cliente WHERE email = '$_SESSION[email]' AND senha = '$_SESSION[senha]'";
 //$result = $conexao->query($sql);
 $query = $conexao->query($sql);

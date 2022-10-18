@@ -259,10 +259,40 @@ body{
 	border-radius: 5px;
 }
 
+#fechar{
+	background-color: transparent;
+	border: 0;
+	top: 0;
+    left: 89%;
+    transform: translate(39%, 0%);
+    position: fixed;
+	margin-bottom: 20px;
+}
+
+#fechar svg{
+	stroke: #8586a1;
+}
+
+#fechar:hover svg{
+	stroke: #e5e32b;
+}
+
+.shadow{
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0 0 0 / 39%);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	z-index: -1;
+}
+
 .container h1{
 	font-size: 1.2rem;
 	font-family: sans-serif;
 	text-align: center;
+	color: #e5e32b;
 }
 
 .container .forma-pagamentos{
@@ -272,7 +302,7 @@ body{
 	justify-content: space-around;
 }
 
-input[type="radio"]{
+.forma-pagamentos input[type="radio"]{
 	appearance: none;
 	width: 20px;
 	height: 20px;
@@ -284,7 +314,7 @@ input[type="radio"]{
 	cursor: pointer;
 }
 
-input[type="radio"]:before{
+.forma-pagamentos input[type="radio"]:before{
 	content: " ";
 	width: 14px;
 	height: 14px;
@@ -294,24 +324,110 @@ input[type="radio"]:before{
 	opacity: 0;
 }
 
-input[type="radio"]:checked:before{
+.forma-pagamentos input[type="radio"]:checked:before{
 	opacity: 1;
+}
+
+/*Bandeira dos cartões*/
+
+.bandeiraCartao{
+	appearance: none;
+    width: 75px;
+    height: 46.5px;
+	background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+	margin-left: 1%;
+}
+
+.bandeiraCartao:nth-child(1){
+	background-image: url("../imagens/imagens_pagina/formas_pagamento/visa.png");
+}
+
+.bandeiraCartao:nth-child(2){
+	background-image: url("../imagens/imagens_pagina/formas_pagamento/elo.png");
+}
+
+.bandeiraCartao:before{
+	content: " ";
+    width: 67px;
+    height: 38.5px;
+    border: 4px dashed #1fe754;
+    position: absolute;
+	opacity: 0;
+}
+
+.bandeiraCartao:checked:before{
+	opacity: 1;
+}
+
+.area-bandeiras{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 5%;
+}
+
+.bandeiras-op{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 #area-pagamento{
 	width: 65%;
 	padding: 20px;
 	border-radius: 5px;
-	background-color: #0b0c42;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, 100%);
+	transform: translate(-50%, -50%);
+    position: absolute;
+	margin-top: 5%;
+}
+
+.link-boleto{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.link-boleto a{
+	color: #e5e32b;
+	font-size: 2rem;
+	text-decoration: none;
+	font-family: 'Merriweather Sans';
+}
+
+.link-boleto a:hover{
+	text-decoration: underline;
+}
+
+.qrcode{
+	width: 30%;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 5%);
 	position: relative;
+}
+
+.boleto-cod{
+	width: 100%;
+	margin: 5% 0;
+	background-color: #fff;
+	padding: 5px;
+}
+
+.boleto-cod img{
+	width: 100%;
+}
+
+.qrcode img{
+	width: 100%
 }
 
 .area-credito{
 	width: 100%;
-	background-color: #601f8e;
 }
 
 .input-cartao, .divisao{
@@ -321,36 +437,39 @@ input[type="radio"]:checked:before{
 	position: relative;
 }
 
-.divisao span{
+.divisao span, .bandeira-cartao{
 	font-family: sans-serif;
 	margin-left: 0.5%;
+	font-size: 1.55rem;
+	color: #e5e32b;
 }
 
 .input-cartao{
 	background-color: #ff8343;
 	display: flex;
 	align-items: center;
-	margin: 2.5% 0 5% 0;
+	margin: 2.5% 0 10% 0;
 }
 
 .input-cartao:nth-child(2){
-	margin: 0;
+	margin: 4.5% 0 5% 0;
 }
 
 .input-cartao label{
 	position: absolute;
 	left: 5px;
 	font-family: sans-serif;
+	font-size: 1.55rem;
 }
 
 .input-cartao input:focus + label{
-	top: -30px;
+	top: -35px;
 	color: #e5e32b;
 }
 
 .input-cartao > input:focus:required + label,
 .input-cartao > input:not(:placeholder-shown) + label{
-	top: -30px;
+	top: -35px;
 	color: #e5e32b;
 }
 
@@ -381,6 +500,12 @@ input[type="radio"]:checked:before{
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	margin-top: 4%;
+}
+
+input[type="text"],
+input[type="date"]{
+	height: 35px;
 }
 
 .forma-pagamentos p{
@@ -515,6 +640,12 @@ button[type="submit"]{
 	outline: 0;
 	border-radius: 5px;
 	padding: 5px 50px;
+	left: 50%;
+    transform: translate(-50%, 0%);
+    position: relative;
+	color: #e5e32b;
+	font-size: 1.5rem;
+	margin-top: 2.5%;
 }
 
 button[type="submit"]:hover{

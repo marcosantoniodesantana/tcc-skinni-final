@@ -11,7 +11,7 @@
 	<!-- Estilo css: -->
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 
-	<link rel="shortcut icon" type="image/x-icon" href="..//imagens/imagens_pagina/icone_titulo.png">
+	<link rel="shortcut icon" type="image/x-icon" href="./imagens/imagens_pagina/icone_titulo.png">
 
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -30,6 +30,32 @@
 		<style>
 			.banner-tipos{
 				background-color: transparent;
+			}
+
+			.banners-menores{
+				width: 50%;
+			}
+
+			.banners-menores a {
+ 			   /*width: 178px;*/
+			   width: 31%;
+ 			   margin: 3px;
+			   display: flex;
+			   overflow: hidden;
+			   transition: 1s;
+			}
+			
+			.banners-menores a img{
+				width: 100%;
+			}
+			
+			.banners-menores a:hover img{
+				transform: scale(1.25);
+				transition: 1s;
+			}
+
+			.submostruario-menor {
+			    width: 50%;
 			}
 		</style>
 
@@ -417,10 +443,31 @@
 
 	<section class="mostruario-menor">
 		<div class="banners-menores" id="banner-secundario">
-			<img src="imagens/imagens_pagina/banner/tematicos/animes.png" alt="Banner">
-			<img src="imagens/imagens_pagina/banner/tematicos/Filmes_Banner.png" alt="Banner">
-			<img src="imagens/imagens_pagina/banner/tematicos/Animações_banner.png" alt="Banner">
-			<img src="imagens/imagens_pagina/banner/tematicos/Jogos_Banner.png" alt="Banner">
+			
+			<a href="animes.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/animes.png" alt="Banner">
+			</a>
+
+			<a href="filmes.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Filmes_Banner.png" alt="Banner">
+			</a>
+
+			<a href="animacoes.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Animações_banner.png" alt="Banner">
+			</a>
+
+			<a href="jogos.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Jogos_Banner.png" alt="Banner">
+			</a>
+
+			<a href="series.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Séries_Banner.png" alt="Banner">
+			</a>
+
+			<a href="musicas.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Músicas_banner.png" alt="Banner">
+			</a>
+
 		</div>
 
 		<div class="submostruario-menor">

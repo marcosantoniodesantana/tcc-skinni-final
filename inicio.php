@@ -123,6 +123,36 @@ $resultProduto = $conexao->query($sqlProduto);
 				padding: 3px 61px;
 			}
 
+			.banner-tipos{
+				background-color: transparent;
+			}
+
+			.banners-menores{
+				width: 50%;
+			}
+
+			.banners-menores a {
+ 			   /*width: 178px;*/
+			   width: 31%;
+ 			   margin: 3px;
+			   display: flex;
+			   overflow: hidden;
+			   transition: 1s;
+			}
+			
+			.banners-menores a img{
+				width: 100%;
+			}
+			
+			.banners-menores a:hover img{
+				transform: scale(1.25);
+				transition: 1s;
+			}
+
+			.submostruario-menor {
+			    width: 50%;
+			}
+
 		</style>
 </head>
 
@@ -144,7 +174,7 @@ $resultProduto = $conexao->query($sqlProduto);
 
 			<div class="icones">
 
-				<a href="compras/compras.html">
+				<a href="comprados.php">
 					<div class="compras">
 						<i class="fas fa-shopping-bag"></i>
 					</div>
@@ -160,7 +190,7 @@ $resultProduto = $conexao->query($sqlProduto);
 					
 					<figure class="menu-list">
 						<ul class="list">
-							<li><a href="#">Perfil</a></li>
+							<li><a href="perfil.php">Perfil</a></li>
 							<li><a href="./php/sair.php">Sair</a></li>
 						</ul>
 					</figure>
@@ -432,11 +462,33 @@ $resultProduto = $conexao->query($sqlProduto);
 	</section>
 
 	<section class="mostruario-menor">
-		<div class="banners-menores" id="banner-secundario">
-			<img src="imagens/imagens_pagina/banner/tematicos/animes.png" alt="Banner">
-			<img src="imagens/imagens_pagina/banner/tematicos/Filmes_Banner.png" alt="Banner">
-			<img src="imagens/imagens_pagina/banner/tematicos/Animações_banner.png" alt="Banner">
-			<img src="imagens/imagens_pagina/banner/tematicos/Jogos_Banner.png" alt="Banner">
+
+	<div class="banners-menores" id="banner-secundario">
+			
+			<a href="animes.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/animes.png" alt="Banner">
+			</a>
+
+			<a href="filmes.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Filmes_Banner.png" alt="Banner">
+			</a>
+
+			<a href="animacoes.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Animações_banner.png" alt="Banner">
+			</a>
+
+			<a href="jogos.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Jogos_Banner.png" alt="Banner">
+			</a>
+
+			<a href="series.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Séries_Banner.png" alt="Banner">
+			</a>
+
+			<a href="musicas.php">
+				<img src="imagens/imagens_pagina/banner/tematicos/Músicas_banner.png" alt="Banner">
+			</a>
+
 		</div>
 
 		<div class="submostruario-menor">

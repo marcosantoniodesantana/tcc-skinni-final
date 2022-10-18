@@ -14,7 +14,7 @@ $cep = $_GET['cep'];
 $cidade = $_GET['cidade'];
 $estado = $_GET['estado'];
 
-echo "$nome <br> $telefone <br> $cpf <br> $endereco <br> $bairro <br> $numero <br> $complemento <br> $cep <br> $cidade <br> $estado <br> DADOS DO PRODUTO: <br>";
+//echo "$nome <br> $telefone <br> $cpf <br> $endereco <br> $bairro <br> $numero <br> $complemento <br> $cep <br> $cidade <br> $estado <br> DADOS DO PRODUTO: <br>";
 
 $selectid = "SELECT id_cliente FROM cliente WHERE email = '$_SESSION[email]' AND senha = '$_SESSION[senha]'";
 $resultIdCliente = $conexao->query($selectid);
@@ -28,6 +28,7 @@ while($pedido = mysqli_fetch_assoc($resultIdPedido)){
     mysqli_query($conexao, "INSERT INTO entrega VALUES (0, '$nome', '$cpf', '$telefone', '$endereco', '$bairro', '$numero', '$complemento', '$cep', '$cidade', '$estado', '$pedido[id_pedido]')");
     
 }
+header("Location: ../pagamento.html");
 }
 
 

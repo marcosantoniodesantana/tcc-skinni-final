@@ -8,6 +8,7 @@ if(!empty($_GET['id_produto'])){
 	$sqlSelect = "SELECT * FROM produto WHERE id_produto=$id_produto";
 
 	$result = $conexao->query($sqlSelect);
+	$resultImg = $conexao->query($sqlSelect);
 	$resultName = $conexao->query($sqlSelect);
 }
 
@@ -29,6 +30,93 @@ if(!empty($_GET['id_produto'])){
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&family=Merriweather+Sans&display=swap"
 		rel="stylesheet">
+
+		<style>
+
+			.container{
+				height: fit-content;
+				padding-bottom: 5px;
+				margin-top: 1.5%;
+				background-color: #0b0c42;
+			}
+
+			.tituloItem, .preco, label[for="quantidade"], label[for="z"]{
+				color: #000;
+			}
+
+			.descricao-input{
+				color: #e5e32b;
+			}
+
+			.tituloItem, .preco{
+				color: #e5e32b;
+			}
+
+			.separacoes select, .quantidade-caixa, .frete-caixa, .quantidade, .frete-caixa input{
+				border-color: #e5e32b;
+				color: #000;
+				background-color: #cacaca;
+			}
+
+			.quantidade-caixa > input:focus + label{
+				top: 0;
+			}
+
+			.frete-caixa > input:required + label, .frete-caixa > input:not(:placeholder-shown) + label, .quantidade-caixa > input:required + label, .quantidade-caixa > input:not(:placeholder-shown) + label {
+			    top: 3px;
+			}
+
+			.frete-caixa > input:focus:required + label,
+			.frete-caixa > input:not(:placeholder-shown) + label, .quantidade-caixa > input:focus:required + label,
+			.quantidade-caixa > input:not(:placeholder-shown) + label {
+			    top: -20px;
+				color: #e5e32b;
+			}
+
+			.quantidade-caixa > input:focus:required + label,
+			.frete-caixa input:focus:required + label{
+				top: -20px;
+				color: #e5e32b;
+			}
+
+			.frete-caixa > input:focus:required + label, .input-format > input:not(:placeholder-shown) + label {
+	    		top: -30px;
+		    	color: #e5e32b;
+			}
+
+			.comprar, .calcularFrete{
+				background-color: #32278b;
+			}
+
+			.comprar:hover, .calcularFrete:hover{
+				background-color: #4c1970;
+			}
+
+			.containerImagem{
+				margin: 0;
+			}
+
+			.imagens-list{
+				width: 30%;
+			    height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				margin-right: 32px;
+			}
+
+			.imagens-visualizar{
+				width: fit-content;
+				height: fit-content;
+				background: #dad4e1;
+			}
+
+			.imagens-visualizar img{
+				width: 100%;
+			}
+
+		</style>
+
 </head>
 <body>
 
@@ -93,8 +181,25 @@ if(!empty($_GET['id_produto'])){
 
     <article class="container">
 
+		<div class="imagens-list">
+
+			<?php
+				while($user_data = mysqli_fetch_assoc($resultImg)){
+					echo "<figure class='imagens-visualizar'>";
+					echo "<img src=".$user_data['url']."/>";
+					echo "</figure>";
+				}
+			?>
+
+			<figure class="imagens-visualizar">
+				<img src="./imagens/imagens_pagina/medidas/medidas_roupas.png" alt="">
+			</figure>
+		</div>
+
 		<section class="containerImagem">
 			<!--<img src="./imagens/produtos/moletons/kimetsu-masks-canguru-unissex.jpg" class="produto">-->
+
+
 			<?php
 				while($user_data = mysqli_fetch_assoc($result)){
 					echo "<img class='produto' src=".$user_data['url']."/>";
@@ -119,7 +224,7 @@ if(!empty($_GET['id_produto'])){
 				<div class="box">
 					<p class="descricao-input">Tamanho</p>
 
-					<select class="tamanho" name="tamanho" id="tamanho">
+					<select class="tamanho" required name="tamanho" id="tamanho">
 						<option value="P">P</option>
 						<option value="m">M</option>
 						<option value="g">G</option>
@@ -131,7 +236,7 @@ if(!empty($_GET['id_produto'])){
 
 					<p class="descricao-input">Modelo</p>
 
-					<select class="modelo" name="modelo" id="modelo">
+					<select class="modelo" required name="modelo" id="modelo">
 						<option value="masculino">Masculino</option>
 						<option value="feminino">Feminino</option>
 						<option value="unisex">Unissex</option>
@@ -144,7 +249,7 @@ if(!empty($_GET['id_produto'])){
 
 				<figure class="quantidade-caixa">
 					<input type="number" class="quantidade"
-					placeholder=" " id="quantidade" name="quantidade">
+					placeholder=" " id="quantidade" required name="quantidade">
 					<label for="quantidade">Quantidade</label>
 				</figure>
 			</div>
@@ -237,6 +342,31 @@ if(!empty($_GET['id_produto'])){
 		document.querySelector("#preco").innerText = preco
 
 		//console.log(preco)
+
+		let selectImgProduct = document.querySelector(".imagens-visualizar:nth-child(1)")
+
+		selectImgProduct.addEventListener("click", () =>{
+			changeProduct()
+		})
+
+		let selectSize = document.querySelector(".imagens-visualizar:nth-child(2)")
+
+		selectSize.addEventListener("click", ()=>{
+			changeSize()
+		})
+
+		function changeProduct(){
+			let getUrl = document.querySelector(".imagens-visualizar > img").src
+
+			document.querySelector(".produto").src = getUrl
+		}
+
+		function changeSize(){
+			let getUrl = document.querySelector(".imagens-visualizar:nth-child(2) > img").src
+
+			document.querySelector(".produto").src = getUrl
+		}
+
 	</script>
 
 </body>
