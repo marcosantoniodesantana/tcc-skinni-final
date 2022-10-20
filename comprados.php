@@ -39,6 +39,15 @@ $resultIdCliente = $conexao->query($sqlIdCliente);
 		.produto-card{
 			margin: 3% 0;
 		}
+
+		.titulo-produto a{
+	    color: #e5e32b;
+    	font-family: 'Merriweather Sans';
+	    font-weight: 100;
+		font-size: 2.3rem;
+		text-decoration: none;
+		}
+
 	</style>
 
 </head>
@@ -93,7 +102,7 @@ $resultIdCliente = $conexao->query($sqlIdCliente);
 				<li><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
 				<li><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
 				<li><a href="" class="link-menu"><span>Infantil</span></a></li>
-				<li><a href="../moletons/moletons.html" class="link-menu"><span>Moletons</span></a></li>
+				<li><a href="moletons.php" class="link-menu"><span>Moletons</span></a></li>
 				<li><a href="../acessorios/acessorios.html" class="link-menu"><span>Acessórios</span></a></li>
 			</ul>
 			<section class="subMenu-inferior"></section>
@@ -165,7 +174,7 @@ $resultIdCliente = $conexao->query($sqlIdCliente);
 		
 						echo'<aside class="dados">';
 							echo '<div class="titulo-produto">';
-								echo '<h4>'.$produto['nome_produto'].'</h4>';
+								echo "<a href='./pgCompra.php?id_produto=$produto[id_produto]'>".$produto['nome_produto'].'</a>';
 							echo '</div>';
 							echo '<div class="preco">';
 								echo '<span>'.$produto['preco'].'</span>';

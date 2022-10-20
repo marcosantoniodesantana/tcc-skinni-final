@@ -57,13 +57,13 @@ $result = $conexao->query($sql);
 
 			<div class="icones">
 
-				<a href="../compras/compras.html">
+				<a href="comprados.php">
 					<div class="compras">
 						<i class="fas fa-shopping-bag"></i>
 					</div>
 				</a>
 
-				<a href="./login.html">
+				<a href="login.html">
 					<div class="usuario">
 						<i class="fas fa-user"></i>
 					</div>
@@ -87,7 +87,7 @@ $result = $conexao->query($sql);
 					</ul>
 				</li>
 
-				<li><a href="index.html" class="link-menu"><span>Novidades</span></a></li>
+				<li><a href="index.php" class="link-menu"><span>Novidades</span></a></li>
 				<li class="marcador-pagina"><a href="" class="link-menu"><span>Feminino</span></a></li>
 				<li><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
 				<li><a href="infantil.php" class="link-menu">Infantil</span></a></li>

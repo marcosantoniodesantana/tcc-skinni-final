@@ -11,24 +11,22 @@ if((!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true))
 
 $logado = $_SESSION['nome'];
 
-//$sql = "SELECT * FROM produto ORDER BY nome_produto DESC";
-$sql = "SELECT * FROM produto WHERE tipo_produto = 'baby body'";
+$sql = "SELECT * FROM produto WHERE tipo_produto = 'camiseta'";
 
 $result = $conexao->query($sql);
 //print_r($result);
 ?>
-
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Infantil</title>
+	<title>Camisetas</title>
 	<!-- Estilo css: -->
 	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
 
-	<link rel="shortcut icon" type="image/x-icon" href="./imagens/imagens_pagina/icone_titulo.png">
+	<link rel="shortcut icon" type="image/x-icon" href="..//imagens/imagens_pagina/icone_titulo.png">
 
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -56,13 +54,13 @@ $result = $conexao->query($sql);
 
 			<div class="icones">
 
-				<a href="comprados.php">
+				<a href="../compras/compras.html">
 					<div class="compras">
 						<i class="fas fa-shopping-bag"></i>
 					</div>
 				</a>
 
-				<a href="login.html">
+				<a href="../login/login.html">
 					<div class="usuario">
 						<i class="fas fa-user"></i>
 					</div>
@@ -81,27 +79,26 @@ $result = $conexao->query($sql);
 
 				<li><h5 class="link-menu">Conta</h5>
 					<ul class="submenu">
-						<li><a href="login.html" class="link-menu">Login</a></li>
-						<li><a href="/cadastro" class="link-menu">Criar conta</a></li>
+						<li><a href="../login/login.html" class="link-menu">Login</a></li>
+						<li><a href="..//cadastro/cadastro.html" class="link-menu">Criar conta</a></li>
 					</ul>
 				</li>
 
-				<li><a href="index.php" class="link-menu"><span>Novidades</span></a></li>
-				<li><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
-				<li><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
-				<li class="marcador-pagina"><a href="" class="link-menu"><span>Infantil</span></a></li>
-				<li><a href="moletons.php" class="link-menu"><span>Moletons</span></a></li>
-				<li><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a></li>
+				<li class="opMenu"><a href="" class="link-menu"><span>Novidades</span></a></li>
+				<li class="opMenu"><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
+				<li class="opMenu"><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
+				<li class="opMenu"><a href="infantil.php" class="link-menu"><span>Infantil</span></a></li>
+				<li class="opMenu"><a href="moletons.html" class="link-menu"><span>Moletons</span></a></li>
+				<li class="opMenu"><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a>
+				</li>
 			</ul>
 			<section class="subMenu-inferior"></section>
 		</nav>
 	</header>
 
 	<section class="mostruario-secoes">
-		<h1></h1>
 
 		<div class="vitrine-item">
-
 		<?php
                 while($user_data = mysqli_fetch_assoc($result)){
 
@@ -114,7 +111,7 @@ $result = $conexao->query($sql);
 						echo"<div class='inf-produto'>";
 							echo"<h2 class='titulo-produto' id='titulo-item'>".$user_data['nome_produto']."</h2>";		
 							echo"<div class='area-precos'>";
-								echo"<h3 class='preco' id='preco'>R$".$user_data['preco']."</h3>";
+								echo"<h3 class='preco'>R$".$user_data['preco']."</h3>";
 							echo"</div>";
 						echo"</div>";
 					echo"</figure>";
@@ -122,6 +119,7 @@ $result = $conexao->query($sql);
 
                 }
             ?>
+		</div>
 
 	</section>
 
@@ -163,10 +161,6 @@ $result = $conexao->query($sql);
 
 					<figure class="tipo-forma-pagamento">
 						<img src="../imagens/imagens_pagina/formas_pagamento/boleto.png" alt="">
-					</figure>
-
-					<figure class="tipo-forma-pagamento">
-						<img src="../imagens/imagens_pagina/formas_pagamento/pix.png" alt="">
 					</figure>
 					
 				</figure>

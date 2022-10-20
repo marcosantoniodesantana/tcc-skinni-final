@@ -86,11 +86,11 @@ $result = $conexao->query($sql);
 					</ul>
 				</li>
 
-				<li><a href="index.html" class="link-menu"><span>Novidades</span></a></li>
+				<li><a href="index.php" class="link-menu"><span>Novidades</span></a></li>
 				<li><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
 				<li class="marcador-pagina"><a href="" class="link-menu"><span>Masculino</span></a></li>
 				<li><a href="infantil.php" class="link-menu"><span>Infantil</span></a></li>
-				<li><a href="moletons.html" class="link-menu"><span>Moletons</span></a></li>
+				<li><a href="moletons.php" class="link-menu"><span>Moletons</span></a></li>
 				<li><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a></li>
 			</ul>
 			<section class="subMenu-inferior"></section>

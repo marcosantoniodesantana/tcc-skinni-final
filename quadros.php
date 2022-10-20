@@ -12,19 +12,18 @@ if((!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true))
 $logado = $_SESSION['nome'];
 
 //$sql = "SELECT * FROM produto ORDER BY nome_produto DESC";
-$sql = "SELECT * FROM produto WHERE tipo_produto = 'baby body'";
+$sql = "SELECT * FROM produto WHERE tipo_produto = 'quadro'";
 
 $result = $conexao->query($sql);
 //print_r($result);
 ?>
-
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Infantil</title>
+	<title>Quadros</title>
 	<!-- Estilo css: -->
 	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
 
@@ -81,15 +80,15 @@ $result = $conexao->query($sql);
 
 				<li><h5 class="link-menu">Conta</h5>
 					<ul class="submenu">
-						<li><a href="login.html" class="link-menu">Login</a></li>
-						<li><a href="/cadastro" class="link-menu">Criar conta</a></li>
+						<li><a href="login/login.html" class="link-menu">Login</a></li>
+						<li><a href="cadastro.html" class="link-menu">Criar conta</a></li>
 					</ul>
 				</li>
 
 				<li><a href="index.php" class="link-menu"><span>Novidades</span></a></li>
 				<li><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
 				<li><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
-				<li class="marcador-pagina"><a href="" class="link-menu"><span>Infantil</span></a></li>
+				<li><a href="infantil.php" class="link-menu"><span>Infantil</span></a></li>
 				<li><a href="moletons.php" class="link-menu"><span>Moletons</span></a></li>
 				<li><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a></li>
 			</ul>
@@ -98,7 +97,6 @@ $result = $conexao->query($sql);
 	</header>
 
 	<section class="mostruario-secoes">
-		<h1></h1>
 
 		<div class="vitrine-item">
 
@@ -163,10 +161,6 @@ $result = $conexao->query($sql);
 
 					<figure class="tipo-forma-pagamento">
 						<img src="../imagens/imagens_pagina/formas_pagamento/boleto.png" alt="">
-					</figure>
-
-					<figure class="tipo-forma-pagamento">
-						<img src="../imagens/imagens_pagina/formas_pagamento/pix.png" alt="">
 					</figure>
 					
 				</figure>

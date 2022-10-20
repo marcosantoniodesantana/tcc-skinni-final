@@ -11,20 +11,18 @@ if((!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true))
 
 $logado = $_SESSION['nome'];
 
-//$sql = "SELECT * FROM produto ORDER BY nome_produto DESC";
-$sql = "SELECT * FROM produto WHERE tipo_produto = 'baby body'";
+$sql = "SELECT * FROM produto WHERE tipo_produto = 'moletom'";
 
 $result = $conexao->query($sql);
 //print_r($result);
 ?>
-
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Infantil</title>
+	<title>Moletons</title>
 	<!-- Estilo css: -->
 	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
 
@@ -81,7 +79,7 @@ $result = $conexao->query($sql);
 
 				<li><h5 class="link-menu">Conta</h5>
 					<ul class="submenu">
-						<li><a href="login.html" class="link-menu">Login</a></li>
+						<li><a href="/login" class="link-menu">Login</a></li>
 						<li><a href="/cadastro" class="link-menu">Criar conta</a></li>
 					</ul>
 				</li>
@@ -89,8 +87,8 @@ $result = $conexao->query($sql);
 				<li><a href="index.php" class="link-menu"><span>Novidades</span></a></li>
 				<li><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
 				<li><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
-				<li class="marcador-pagina"><a href="" class="link-menu"><span>Infantil</span></a></li>
-				<li><a href="moletons.php" class="link-menu"><span>Moletons</span></a></li>
+				<li><a href="infantil.php" class="link-menu"><span>Infantil</span></a></li>
+				<li class="marcador-pagina"><a href="" class="link-menu"><span>Moletons</span></a></li>
 				<li><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a></li>
 			</ul>
 			<section class="subMenu-inferior"></section>
@@ -98,7 +96,6 @@ $result = $conexao->query($sql);
 	</header>
 
 	<section class="mostruario-secoes">
-		<h1></h1>
 
 		<div class="vitrine-item">
 
@@ -114,7 +111,7 @@ $result = $conexao->query($sql);
 						echo"<div class='inf-produto'>";
 							echo"<h2 class='titulo-produto' id='titulo-item'>".$user_data['nome_produto']."</h2>";		
 							echo"<div class='area-precos'>";
-								echo"<h3 class='preco' id='preco'>R$".$user_data['preco']."</h3>";
+								echo"<h3 class='preco'>R$".$user_data['preco']."</h3>";
 							echo"</div>";
 						echo"</div>";
 					echo"</figure>";
@@ -122,6 +119,8 @@ $result = $conexao->query($sql);
 
                 }
             ?>
+
+		</div>
 
 	</section>
 
@@ -150,23 +149,23 @@ $result = $conexao->query($sql);
 				<figure class="forma-pagamentos">
 
 					<figure class="tipo-forma-pagamento">
-						<img src="../imagens/imagens_pagina/formas_pagamento/visa.png" alt="">
+						<img src="./imagens/imagens_pagina/formas_pagamento/visa.png" alt="">
 					</figure>
 
 					<figure class="tipo-forma-pagamento">
-						<img src="../imagens/imagens_pagina/formas_pagamento/elo.png" alt="">
+						<img src="./imagens/imagens_pagina/formas_pagamento/elo.png" alt="">
 					</figure>
 
 					<figure class="tipo-forma-pagamento">
-						<img src="../imagens/imagens_pagina/formas_pagamento/mercadopago.png" alt="">
+						<img src="./imagens/imagens_pagina/formas_pagamento/mercadopago.png" alt="">
 					</figure>
 
 					<figure class="tipo-forma-pagamento">
-						<img src="../imagens/imagens_pagina/formas_pagamento/boleto.png" alt="">
+						<img src="./imagens/imagens_pagina/formas_pagamento/boleto.png" alt="">
 					</figure>
 
 					<figure class="tipo-forma-pagamento">
-						<img src="../imagens/imagens_pagina/formas_pagamento/pix.png" alt="">
+						<img src="./imagens/imagens_pagina/formas_pagamento/pix.png" alt="">
 					</figure>
 					
 				</figure>
@@ -184,7 +183,7 @@ $result = $conexao->query($sql);
 
 	<script src="https://unpkg.com/scrollreveal"></script>
 
-	<script type="text/javascript" src="./js/infantil.js"></script>
+	<script type="text/javascript" src="./js/moletons.js"></script>
 	
 	<script>
 		ScrollReveal().reveal('.itens, footer', { interval: 16, reset: true });

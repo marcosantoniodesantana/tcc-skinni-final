@@ -14,12 +14,16 @@ $result = $conexao->query($sqlDadosUser);
 while($user_data = mysqli_fetch_assoc($result)){
     
     //Não editavéis
+	$id = $user_data['id_cliente'];
     $nome = $user_data['nome'];
     $telefone = $user_data['telefone'];
 	$senha = $user_data['senha'];
     $endereco = $user_data['endereco'];
     $numero = $user_data['numero'];
 }
+
+$id_cliente = "SELECT id_cliente FROM cliente WHERE email = '$_SESSION[email]' AND senha = '$_SESSION[senha]'";
+$resultId = $conexao->query($id_cliente);
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +45,32 @@ while($user_data = mysqli_fetch_assoc($result)){
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&family=Merriweather+Sans&display=swap" rel="stylesheet">
+
+	<style>
+
+		.container{
+			display: flex;
+			flex-direction: column;
+		}
+
+		.deletar-conta {
+		width: fit-content;
+    	top: 0%;
+	    left: 50%;
+    	transform: translate(-50%, 0%);
+	    position: relative;
+    	margin: 1% 0;
+	    background-color: #ff0043;
+    	border: 0;
+	    border-radius: 5px;
+    	padding: 10px;
+	    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+		}
+
+		.deletar-conta span{
+			font-family: sans-serif;
+		}
+	</style>
 </head>
 <body>
 
@@ -141,9 +171,9 @@ while($user_data = mysqli_fetch_assoc($result)){
             <button type="submit">Atualizar dados</button>
 
         </form>
+		<a href="./php/deletar.php?id_cliente=<?php echo $id?>" class="deletar-conta"><span>Excluir Conta</span></a>
     </section>
     
-    <button class="deletar-conta"><span>Excluir Conta</span></button>
 
 	<script>
 		let senha = document.querySelector(".icone-eye")

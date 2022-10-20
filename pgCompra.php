@@ -135,7 +135,7 @@ if(!empty($_GET['id_produto'])){
 
 			<div class="icones">
 
-				<a href="compras.html">
+				<a href="comprados.php">
 					<div class="compras">
 						<i class="fas fa-shopping-bag"></i>
 					</div>
@@ -165,12 +165,13 @@ if(!empty($_GET['id_produto'])){
 					</ul>
 				</li>
 
-				<li class="opMenu"><a href="index.html" class="link-menu"><span>Novidades</span></a></li>
-				<li class="opMenu"><a href="feminino.html" class="link-menu"><span>Feminino</span></a></li>
-				<li class="opMenu"><a href="masculino.html" class="link-menu"><span>Masculino</span></a></li>
-				<li class="opMenu"><a href="infantil.html" class="link-menu"><span>Infantil</span></a></li>
-				<li class="opMenu"><a href="moletons.html" class="link-menu"><span>Moletons</span></a></li>
-				<li class="opMenu"><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a></li>
+				<li class="opMenu"><a href="" class="link-menu"><span>Novidades</span></a></li>
+				<li class="opMenu"><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
+				<li class="opMenu"><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
+				<li class="opMenu"><a href="infantil.php" class="link-menu"><span>Infantil</span></a></li>
+				<li class="opMenu"><a href="moletons.php" class="link-menu"><span>Moletons</span></a></li>
+				<li class="opMenu"><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a>
+				</li>
 			</ul>
 			<!--
 			<section class="subMenu-inferior"></section>

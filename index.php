@@ -79,7 +79,7 @@
 
 			<div class="icones">
 
-				<a href="compras/compras.html">
+				<a href="comprados.php">
 					<div class="compras">
 						<i class="fas fa-shopping-bag"></i>
 					</div>
@@ -113,8 +113,8 @@
 				<li class="opMenu"><a href="" class="link-menu"><span>Novidades</span></a></li>
 				<li class="opMenu"><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
 				<li class="opMenu"><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
-				<li class="opMenu"><a href="infantil.html" class="link-menu"><span>Infantil</span></a></li>
-				<li class="opMenu"><a href="moletons.html" class="link-menu"><span>Moletons</span></a></li>
+				<li class="opMenu"><a href="infantil.php" class="link-menu"><span>Infantil</span></a></li>
+				<li class="opMenu"><a href="moletons.php" class="link-menu"><span>Moletons</span></a></li>
 				<li class="opMenu"><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a>
 				</li>
 			</ul>
@@ -151,19 +151,19 @@
 		</div>
 
 		<div class="submenu-inferior-mini">
-			<a href="infantil.html">
+			<a href="infantil.php">
 				<img src="./imagens/imagens_pagina/icones-menu/Atalho_Baby Body.png" title="Roupas de bebe">
 			</a>
 
-			<a href="camisetas.html">
+			<a href="camisetas.php">
 				<img src="./imagens/imagens_pagina/icones-menu/Atalho_Camisetas.png" title="Camisetas">
 			</a>
 
-			<a href="moletons.html">
+			<a href="moletons.php">
 				<img src="./imagens/imagens_pagina/icones-menu/Atalho_Moletons.png" title="Moletons">
 			</a>
 
-			<a href="quadros.html">
+			<a href="quadros.php">
 				<img src="./imagens/imagens_pagina/icones-menu/Atalho_Quadros.png" title="Quadros decorativos">
 			</a>
 
