@@ -4,11 +4,13 @@ include("./php/conexao.php");
 
 //print_r($_SESSION['email']);
 
+/*
 if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)){
 	unset($_SESSION['email']);
 	unset($_SESSION['senha']);
 	header("Location: login.html");
 }
+*/
 
 $userEmail = $_SESSION['email'];
 $userSenha = $_SESSION['senha'];
@@ -222,8 +224,8 @@ $resultProduto = $conexao->query($sqlProduto);
 				<li class="opMenu"><a href="" class="link-menu"><span>Novidades</span></a></li>
 				<li class="opMenu"><a href="feminino.php" class="link-menu"><span>Feminino</span></a></li>
 				<li class="opMenu"><a href="masculino.php" class="link-menu"><span>Masculino</span></a></li>
-				<li class="opMenu"><a href="infantil.html" class="link-menu"><span>Infantil</span></a></li>
-				<li class="opMenu"><a href="moletons.html" class="link-menu"><span>Moletons</span></a></li>
+				<li class="opMenu"><a href="infantil.php" class="link-menu"><span>Infantil</span></a></li>
+				<li class="opMenu"><a href="moletons.php" class="link-menu"><span>Moletons</span></a></li>
 				<li class="opMenu"><a href="acessorios.html" class="link-menu"><span>Acessórios</span></a>
 				</li>
 			</ul>
@@ -260,23 +262,23 @@ $resultProduto = $conexao->query($sqlProduto);
 		</div>
 
 		<div class="submenu-inferior-mini">
-			<a href="infantil.html">
+			<a href="infantil.php">
 				<img src="./imagens/imagens_pagina/icones-menu/Atalho_Baby Body.png" title="Roupas de bebe">
 			</a>
 
-			<a href="camisetas.html">
+			<a href="camisetas.php">
 				<img src="./imagens/imagens_pagina/icones-menu/Atalho_Camisetas.png" title="Camisetas">
 			</a>
 
-			<a href="moletons.html">
+			<a href="moletons.php">
 				<img src="./imagens/imagens_pagina/icones-menu/Atalho_Moletons.png" title="Moletons">
 			</a>
 
-			<a href="quadros.html">
+			<a href="quadros.php">
 				<img src="./imagens/imagens_pagina/icones-menu/Atalho_Quadros.png" title="Quadros decorativos">
 			</a>
 
-			<a href="acessorios.html">
+			<a href="acessorios.php">
 				<img src="./imagens/imagens_pagina/icones-menu/acessorios.png" title="Acessórios">
 			</a>
 		</div>

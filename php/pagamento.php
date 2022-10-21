@@ -38,4 +38,6 @@ if(isset($_GET['pagamento'])){
         mysqli_query($conexao, "INSERT INTO pagamento VALUES (0, '$pagamento', '$nCartaoFormat', '$codCartao', 20.95, '$id')");
     }
 
+    header("Location: ../concluido.html");
+
 }

@@ -30,6 +30,8 @@ while($id_cliente = mysqli_fetch_assoc($result_id_cliente)){
 
     $resultUpdate = $conexao->query($sqlUpdate);
 
+    header("Location: ../index.php");
+
 }
 
 ?>

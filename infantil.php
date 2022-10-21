@@ -3,6 +3,7 @@ session_start();
 include('./php/conexao.php');
 //print_r($_SESSION);
 
+/*
 if((!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true)){
     unset($_SESSION['nome']);
     unset($_SESSION['senha']);
@@ -10,6 +11,7 @@ if((!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true))
 }
 
 $logado = $_SESSION['nome'];
+*/
 
 //$sql = "SELECT * FROM produto ORDER BY nome_produto DESC";
 $sql = "SELECT * FROM produto WHERE tipo_produto = 'baby body'";
@@ -38,6 +40,72 @@ $result = $conexao->query($sql);
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&family=Merriweather+Sans&display=swap" rel="stylesheet">
+
+	<style>
+			.on{
+				width: 15px;
+				height: 15px;
+				background-color: #14c914;
+				border-radius: 50px;
+				position: fixed;
+   				margin: 2.5% 0% 0 1.9%;
+			}
+
+			.usuario{
+				/*margin-top: 72px;*/
+			}
+
+			.login-menu{
+				display: flex;
+			    flex-direction: column;
+			    align-items: center;
+				position: relative;
+			}
+
+			.menu-list{
+				display: none;
+				background-color: #00ff00;
+				position: relative;
+				margin: 0px 0px -70px -64px;
+				text-align: center;
+				
+			}
+
+			.login-menu:hover .menu-list{
+				display: flex;
+			}
+
+			.login-menu:hover .on{
+				display: none;
+			}
+
+			.menu-list ul{
+				width: 150px;
+				padding: 5px 10px;
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				background-color: #2c0e50;
+			    box-shadow: 0 0 23px rgb(0 0 0 / 50%);
+				overflow: hidden;
+			}
+
+			.menu-list ul li{
+				background-color: #8586a1;
+				margin: 5px 0 5px 0;
+				padding: 4px;
+				width: fit-content;
+			}
+
+			.menu-list ul li a{
+				font-family: sans-serif;
+				color: #dad829;
+				text-decoration: none;
+				font-weight: bold;
+				padding: 3px 61px;
+			}
+	</style>
+
 </head>
 <body>
 
@@ -62,11 +130,33 @@ $result = $conexao->query($sql);
 					</div>
 				</a>
 
-				<a href="login.html">
-					<div class="usuario">
-						<i class="fas fa-user"></i>
-					</div>
-				</a>
+				<?php
+						if(isset($_SESSION['email']) || isset($_SESSION['senha'])){
+							//echo "Feijão";
+							echo '				<div class="login-menu">
+
+					
+							<div class="usuario">
+								<i class="fas fa-user"></i>
+							</div>
+							<figure class="on"></figure>
+							
+							<figure class="menu-list">
+								<ul class="list">
+									<li><a href="perfil.php">Perfil</a></li>
+									<li><a href="./php/sair.php">Sair</a></li>
+								</ul>
+							</figure>
+		
+						</div>';
+						}else{
+							echo'				<a href="login.html" class="user">
+							<div class="usuario">
+								<i class="fas fa-user"></i>
+							</div>
+						</a>';
+						}
+						?>
 			</div>
 
 		</div>
